@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Singing in Seattle Choir — Bellevue &amp; Eastside community choir</title>
+<meta name="description" content="Singing in Seattle Choir is a nonprofit community choir in Bellevue and the Eastside, sharing international music in more than five languages. Everyone is welcome.">
+<meta property="og:title" content="Singing in Seattle Choir">
+<meta property="og:description" content="Spreading the joy of music to all who listen. Nonprofit community choir in Bellevue &amp; the Eastside.">
+<meta property="og:image" content="assets/choir.webp">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root {
+  --navy: #0B1833; --card: #142650; --border: #2F4275; --divider: #26365F;
+  --cream: #F4F1EA; --muted: #D9DCE8; --foot: #B8BED3; --gold: #D2B062; --gold-hi: #EBD49A; --gold-dark: #8A5A00;
+  --serif: 'DM Serif Display', Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--navy) url("assets/stars.svg") repeat;
+  color: var(--cream); font-family: Inter, system-ui, sans-serif; line-height: 1.5;
+}
+a { color: var(--gold); }
+a:hover { color: var(--gold-hi); }
+img { display: block; max-width: 100%; }
+.wrap { position: relative; max-width: 1280px; margin: 0 auto; padding: 26px 32px 22px; }
+.staff { position: absolute; top: 0; left: 300px; width: calc(100% - 300px); height: 150px; pointer-events: none;
+  background: url("assets/staff.svg") no-repeat left top / 1160px 150px; }
+
+/* header */
+header { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; flex-direction: column; gap: 8px; }
+.brand img { width: 217px; height: 110px; object-fit: contain; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+nav.main { display: flex; align-items: center; gap: 40px; font-size: 17px; font-weight: 500; }
+nav.main a { color: var(--cream); text-decoration: none; padding: 10px 0 6px; border-bottom: 2px solid transparent; }
+nav.main a[aria-current="page"] { color: var(--gold); border-bottom-color: var(--gold); }
+.btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 16px; padding: 13px 26px; border-radius: 999px; text-align: center; }
+.btn-gold { background: var(--gold); color: var(--navy) !important; }
+.btn-gold:hover { background: var(--gold-hi); }
+.btn-cream { background: var(--cream); color: var(--navy) !important; }
+nav.main .btn { margin-left: 8px; border: 0; padding: 13px 26px; }
+
+/* mobile menu (no JavaScript) */
+.mobile-actions { display: none; align-items: center; gap: 8px; }
+.menu { position: relative; }
+.menu summary { list-style: none; width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 999px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--cream); }
+.menu summary::-webkit-details-marker { display: none; }
+.menu .panel { position: absolute; right: 0; top: 54px; z-index: 10; width: min(340px, calc(100vw - 32px)); background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 6px 18px 10px; }
+.menu .panel a { display: block; padding: 14px 4px; color: var(--cream); text-decoration: none; font-weight: 600; font-size: 18px; border-bottom: 1px solid var(--divider); }
+.menu .panel a:last-child { border-bottom: 0; }
+.menu .panel a[aria-current="page"] { color: var(--gold); }
+
+/* hero */
+.hero { position: relative; margin-top: 20px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; height: 390px; }
+.photo { position: relative; grid-column: span 2; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 30px 22px; }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 84%); mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 84%); }
+.photo .text { position: relative; display: flex; flex-direction: column; gap: 10px; }
+h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 33px; line-height: 1.1; }
+h1 em, .serif em { font-style: italic; color: var(--gold); }
+.lead { margin: 0; font-size: 15px; color: var(--muted); }
+
+.event { background: var(--card); border: 1px solid var(--gold); border-radius: 8px; padding: 22px 26px; display: flex; flex-direction: column; gap: 12px; }
+.label { font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
+.event .head { display: flex; align-items: center; gap: 20px; }
+.date { width: 84px; height: 92px; flex-shrink: 0; border-radius: 6px; background: var(--cream); color: var(--navy); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.date .m { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-dark); }
+.date .d { font-family: var(--serif); font-size: 42px; line-height: 1; }
+.date .w { font-size: 11px; font-weight: 500; }
+.event h2 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 24px; line-height: 1.12; }
+.meta { display: flex; flex-direction: column; gap: 6px; font-size: 16px; }
+.meta span { display: flex; align-items: center; gap: 8px; }
+.event p { margin: 0; font-size: 15px; color: var(--muted); }
+.event .actions { margin-top: auto; display: flex; align-items: center; gap: 22px; }
+.event .actions a.link { font-size: 15px; font-weight: 600; padding: 10px 0; }
+
+/* info boxes */
+.boxes { position: relative; margin-top: 22px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.box { background: var(--card); border-radius: 10px; padding: 22px 26px; display: flex; flex-direction: column; gap: 10px; }
+.box .title { font-family: var(--serif); font-size: 27px; line-height: 1.05; }
+.box .addr { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--cream); }
+.box .note { font-size: 14px; color: var(--muted); }
+.social { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 2px; }
+.social a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; border: 1px solid var(--border); border-radius: 999px; color: var(--cream); text-decoration: none; font-size: 14px; font-weight: 500; }
+.support { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 2px; }
+.support .note { line-height: 1.45; }
+.support .btn { flex-shrink: 0; font-size: 15px; }
+
+footer { position: relative; margin-top: 18px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--foot); }
+footer a { display: flex; align-items: center; gap: 8px; }
+
+svg.i { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* tablet & phone */
+@media (max-width: 1000px) {
+  .hero { grid-template-columns: 1fr; height: auto; }
+  .photo { grid-column: auto; height: auto; padding: 0; }
+  .photo img { position: static; height: 230px; -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
+  .photo .text { margin-top: 14px; }
+  h1 { font-size: 32px; }
+  .lead { font-size: 16px; }
+  .boxes { grid-template-columns: 1fr; gap: 16px; }
+}
+@media (max-width: 760px) {
+  .wrap { padding: 20px 20px 24px; }
+  nav.main { display: none; }
+  .mobile-actions { display: flex; }
+  header { align-items: flex-start; }
+  .brand img { width: 190px; height: 96px; }
+  .eyebrow { font-size: 11px; letter-spacing: .18em; line-height: 1.6; }
+  .staff { top: 182px; left: 0; width: 100%; height: 36px; background-size: 700px 90px; background-position: -40px -48px; }
+  .hero { margin-top: 58px; }
+  .event { padding: 22px; }
+  .event .actions { flex-direction: column; align-items: stretch; }
+  .event .actions .btn { width: 100%; }
+  .event .actions a.link { align-self: center; }
+  .social a { flex-direction: column; min-height: 64px; border-radius: 8px; font-size: 13px; gap: 6px; }
+  .support { flex-direction: column; align-items: stretch; }
+  .support .btn { width: 100%; font-size: 16px; padding: 14px 20px; }
+  footer { flex-direction: column-reverse; align-items: flex-start; border-top: 1px solid var(--divider); padding-top: 18px; }
+}
+</style>
+</head>
+<body>
+<svg aria-hidden="true" style="display: none">
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14.5 8H17V4.5h-2.5A3.5 3.5 0 0 0 11 8v2.5H8.5V14H11v6.5h3.5V14H17l.5-3.5h-3V8.5a.5.5 0 0 1 .5-.5z"/></symbol>
+  <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
+<div class="wrap">
+  <div class="staff" aria-hidden="true"></div>
+
+  <header>
+    <div class="brand">
+      <a href="./" aria-current="page"><img src="assets/logo.svg" alt="Singing in Seattle Choir — home"></a>
+      <span class="eyebrow">Nonprofit community choir · Bellevue &amp; the Eastside</span>
+    </div>
+
+    <nav class="main" aria-label="Main">
+      <a href="./" aria-current="page">Home</a>
+      <a href="https://singinginseattle.org/">About Us</a>
+      <a href="https://singinginseattle.org/blog">Events</a>
+      <a class="btn btn-gold" href="https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir">Donate</a>
+    </nav>
+
+    <div class="mobile-actions">
+      <a class="btn btn-gold" style="font-size: 15px; padding: 12px 16px" href="https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir">Donate</a>
+      <details class="menu">
+        <summary aria-label="Menu"><svg class="i" style="width: 22px; height: 22px"><use href="#i-menu"/></svg></summary>
+        <nav class="panel" aria-label="Main">
+          <a href="./" aria-current="page">Home</a>
+          <a href="https://singinginseattle.org/">About Us</a>
+          <a href="https://singinginseattle.org/blog">Events</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="photo">
+        <img src="assets/choir.webp" alt="Singing in Seattle Choir members in concert dress" width="2341" height="1728">
+        <div class="text">
+          <h1>Spreading the joy of music to <em>all who listen.</em></h1>
+          <p class="lead">We are a passionate, dedicated choir of singers from many backgrounds, sharing international music traditions in more than five languages. Everyone is welcome, regardless of background or experience.</p>
+        </div>
+      </div>
+
+      <article class="event" aria-labelledby="event-title">
+        <span class="label">Next performance</span>
+        <div class="head">
+          <div class="date" aria-hidden="true"><span class="m">Nov</span><span class="d">30</span><span class="w">Monday</span></div>
+          <h2 id="event-title">Garden D’Lights with Singing in Seattle<span class="visually-hidden"> — Monday, November 30</span></h2>
+        </div>
+        <div class="meta">
+          <span><svg class="i"><use href="#i-clock"/></svg>6:00 – 7:00 PM</span>
+          <span><svg class="i"><use href="#i-pin"/></svg>Bellevue Botanical Garden</span>
+        </div>
+        <p>A Garden d’Lights ticket is required to attend.</p>
+        <div class="actions">
+          <a class="btn btn-cream" href="https://bellevuebotanical.org/garden-dlights/">Get garden tickets</a>
+          <a class="link" href="https://singinginseattle.org/blog">All events</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="boxes">
+      <div class="box" id="rehearsals">
+        <span class="label">Rehearsals</span>
+        <span class="title">Mondays, 7 – 9 pm</span>
+        <a class="addr" href="https://maps.app.goo.gl/xgzWdnQ2xDiFsBnS6"><svg class="i"><use href="#i-pin"/></svg>1934 108th Ave NE, Bellevue, WA 98004</a>
+        <span class="note">We rehearse weekly, and new singers are always welcome.</span>
+      </div>
+      <div class="box">
+        <span class="label">Follow us</span>
+        <span class="title">Hear us sing</span>
+        <div class="social">
+          <a href="https://www.facebook.com/profile.php?id=61584344495662"><svg class="i"><use href="#i-fb"/></svg>Facebook</a>
+          <a href="https://www.youtube.com/@singinginseattlechoir1725"><svg class="i"><use href="#i-yt"/></svg>YouTube</a>
+          <a href="https://www.instagram.com/singinginseattle/"><svg class="i"><use href="#i-ig"/></svg>Instagram</a>
+        </div>
+      </div>
+      <div class="box">
+        <span class="label">Support</span>
+        <span class="title">Keep the music going</span>
+        <div class="support">
+          <span class="note">Your donation helps us share music with our community.</span>
+          <a class="btn btn-gold" href="https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir">Donate</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Singing in Seattle Choir · 501(c)(3) nonprofit · Tax ID 88-1743983</span>
+    <a href="mailto:singinginseattlechoir@gmail.com"><svg class="i" style="width: 16px; height: 16px"><use href="#i-mail"/></svg>singinginseattlechoir@gmail.com</a>
+  </footer>
+</div>
+</body>
+</html>
