@@ -27,9 +27,12 @@ layout: page
           <p>{{ e.summary }}</p>
           {%- endif %}
         </div>
-        {%- if show_tickets or e.facebook %}
+        {%- if show_tickets or e.facebook or e.albums %}
         <div class="actions">
           {% if show_tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e.tickets_label | default: "Get tickets" }}</a>{% endif %}
+          {%- for album in e.albums %}
+          <a class="btn btn-cream" href="{{ album.url }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-photo"/></svg>{{ album.title | default: "Photo album" }}</a>
+          {%- endfor %}
           {% if e.facebook %}<a class="link fb" href="{{ e.facebook }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>Event on Facebook</a>{% endif %}
         </div>
         {%- endif %}

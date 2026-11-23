@@ -33,6 +33,9 @@ facebook: https://www.facebook.com/events/...   # optional
 # photo: assets/events/...webp  # thumbnail in "Past events"; default: poster
 # youtube: [VIDEO_ID, ...]      # embedded on the event page
 # photos: [assets/events/....webp, ...]   # gallery on the event page
+# albums:                       # links to shared photo albums
+#   - url: https://photos.app.goo.gl/...
+#     title: Photo album        # optional, default "Photo album"
 ---
 Optional longer text for the event page (Markdown). Without it, the page
 shows the summary.

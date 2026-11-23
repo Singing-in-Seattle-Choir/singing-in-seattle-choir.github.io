@@ -288,7 +288,8 @@ a.title:hover { color: var(--gold-hi); }
 .event-page .meta a { color: var(--cream); display: flex; align-items: center; gap: 8px; text-underline-offset: 3px; }
 .event-page .text p { margin: 0 0 14px; font-size: 18px; line-height: 1.6; color: var(--muted); }
 .event-page .text p:last-child { margin-bottom: 0; }
-.event-page .actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.event-page .actions { display: flex; align-items: center; gap: 14px 24px; flex-wrap: wrap; }
+.event-page .actions .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
 .event-page .actions a.link { font-size: 15px; font-weight: 600; padding: 10px 0; display: inline-flex; align-items: center; gap: 6px; }
 .videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .videos iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 10px; }
