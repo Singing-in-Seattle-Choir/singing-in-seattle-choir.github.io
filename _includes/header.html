@@ -18,9 +18,9 @@
         <summary aria-label="Menu"><svg class="i" style="width: 22px; height: 22px"><use href="#i-menu"/></svg></summary>
         <nav class="panel" aria-label="Main">
           <a href="{{ '/' | relative_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}>Home</a>
-          <a href="{{ '/about.html' | relative_url }}"{% if include.current == "about" %} aria-current="page"{% endif %}>About Us</a>
-          <a href="{{ '/board.html' | relative_url }}" style="padding-left: 22px; font-size: 16px; font-weight: 500">Board of Directors</a>
-          <a href="{{ '/transparency.html' | relative_url }}" style="padding-left: 22px; font-size: 16px; font-weight: 500">Transparency</a>
+          <a href="{{ '/about.html' | relative_url }}"{% if include.current == "about" and include.sub == nil %} aria-current="page"{% endif %}>About Us</a>
+          <a href="{{ '/board.html' | relative_url }}"{% if include.sub == "board" %} aria-current="page"{% endif %} style="padding-left: 22px; font-size: 16px; font-weight: 500">Board of Directors</a>
+          <a href="{{ '/transparency.html' | relative_url }}"{% if include.sub == "transparency" %} aria-current="page"{% endif %} style="padding-left: 22px; font-size: 16px; font-weight: 500">Transparency</a>
           <a href="{{ '/events.html' | relative_url }}"{% if include.current == "events" %} aria-current="page"{% endif %}>Events</a>
         </nav>
       </details>
