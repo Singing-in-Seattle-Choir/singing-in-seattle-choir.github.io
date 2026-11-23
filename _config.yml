@@ -16,7 +16,7 @@ collections:
 
 # Links to shared photo albums on event pages (the `albums` field).
 # Off while the albums are being tidied up; set to true to show them again.
-show_albums: false
+show_albums: true
 
 # Pages are in English unless they live under ru/ (see _data/i18n.yml).
 defaults:

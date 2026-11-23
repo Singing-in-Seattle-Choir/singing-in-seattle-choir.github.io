@@ -9,5 +9,5 @@ summary: A short performance at Nauryz 2026, a celebration of Turkic heritage an
 summary_ru: Небольшое выступление на Nauryz 2026 — празднике тюркского наследия и сообщества в честь весеннего праздника и Нового года в Центральной Азии.
 tickets: https://www.zeffy.com/en-US/ticketing/nauryz-2026-celebration-unity-of-turkic-heritage-and-community
 albums:
-  - url: https://photos.app.goo.gl/qLsu4FqM9PzSSme3A
+  - url: https://photos.app.goo.gl/TwhHRozCk6oD1HpE6
 ---

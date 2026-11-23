@@ -8,6 +8,6 @@ summary: Our spring concert, a musical journey with songs that cross oceans and 
 summary_ru: Наш весенний концерт — музыкальное путешествие с песнями, которые пересекают океаны и культуры, а после — вечеринка с караоке для всех возрастов.
 tickets: https://www.zeffy.com/en-US/ticketing/around-the-world-spring-concert
 albums:
-  - url: https://photos.app.goo.gl/g5y5K2Np72sxr8iG8
+  - url: https://photos.app.goo.gl/aJXiqdAkCaCRtpyZ8
 playlists: [PLF7UeV6WMLNE]
 ---

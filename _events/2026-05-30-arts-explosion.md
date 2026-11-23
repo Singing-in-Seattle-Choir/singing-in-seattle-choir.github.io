@@ -8,5 +8,5 @@ poster_alt_ru: Хор Singing in Seattle на фоне баннера Arts Explo
 summary: An hour of songs at Arts Explosion, a three-day arts festival (May 29–31) at the Federal Way Performing Arts and Event Center.
 summary_ru: Час песен на Arts Explosion — трёхдневном фестивале искусств (29–31 мая) в Federal Way Performing Arts and Event Center.
 albums:
-  - url: https://photos.app.goo.gl/j83KofNnMNUJT7WG6
+  - url: https://photos.app.goo.gl/9MCxvFe8dvv9ujoa7
 ---

@@ -9,5 +9,5 @@ summary_ru: Зимний концерт, полный хорошей энерг�
 tickets: https://www.zeffy.com/en-US/ticketing/feeling-good-winter-concert
 facebook: https://www.facebook.com/share/1BnxUFL2Rv/
 albums:
-  - url: https://photos.app.goo.gl/69EefmLPXU6Ajh6y5
+  - url: https://photos.app.goo.gl/utbEJuZZddTKk82b8
 ---
