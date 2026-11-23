@@ -213,8 +213,9 @@ h2.big { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 42px
 .tile h3.gold { color: var(--gold); font-size: 30px; }
 .tile p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--muted); }
 
-.photos { position: relative; margin-top: 56px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
-.photos img { width: 100%; height: 260px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
+/* Justified row: each photo keeps its own aspect ratio (--ar), all share a height. */
+.photos { position: relative; margin-top: 56px; display: flex; flex-wrap: wrap; gap: 20px; }
+.photos img { flex: var(--ar) 1 calc(var(--ar) * 100px); min-width: 0; height: auto; aspect-ratio: var(--ar); object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
 
 .vision { position: relative; margin-top: 56px; background: var(--cream); color: var(--navy); border-radius: 12px; padding: 28px 44px; display: flex; flex-direction: column; gap: 10px; }
 .vision .label { color: var(--gold-dark); }
@@ -249,8 +250,7 @@ h2.big { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 42px
 @media (max-width: 1000px) {
   .story { grid-template-columns: 1fr; gap: 18px; }
   .grid3, .steps, .grid2 { grid-template-columns: 1fr; gap: 16px; }
-  .photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .photos img { height: 180px; }
+  .photos { gap: 12px; }
   .join .top { flex-direction: column; align-items: flex-start; gap: 20px; }
   .nowrap-lg { white-space: normal; }
 }
@@ -262,7 +262,6 @@ h2.big { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 42px
   .stats b { font-size: 28px; }
   .stats span { font-size: 12px; }
   .tile { padding: 22px; }
-  .photos img { height: 150px; }
   .vision { padding: 20px 22px; }
   .vision p { font-size: 22px; }
   .join { padding-top: 28px; gap: 22px; }
