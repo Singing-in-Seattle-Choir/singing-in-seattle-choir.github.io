@@ -1,22 +1,24 @@
 ---
 layout: page
 ---
+{%- include lang.html -%}
 {%- assign e = page -%}
 {%- assign show_tickets = false -%}{%- if e.upcoming and e.tickets -%}{%- assign show_tickets = true -%}{%- endif -%}
-{%- capture poster_alt -%}{%- if e.poster_alt -%}{{ e.poster_alt }}{%- else -%}Poster for {{ e.title }}{%- endif -%}{%- endcapture -%}
-    <a class="back" href="{{ '/events.html' | relative_url }}"><svg class="i"><use href="#i-back"/></svg>All events</a>
+{%- assign custom_alt = e | loc: "poster_alt", page.lang -%}
+{%- capture poster_alt -%}{%- if custom_alt -%}{{ custom_alt }}{%- else -%}{{ t.poster_for }} {{ e.title }}{%- endif -%}{%- endcapture -%}
+    <a class="back" href="{{ lp | append: '/events.html' | relative_url }}"><svg class="i"><use href="#i-back"/></svg>{{ t.all_events }}</a>
 
     <article class="event-page">
       <img class="poster" src="{{ e.poster | prepend: '/' | relative_url }}" alt="{{ poster_alt | escape }}">
       <div class="info">
-        <span class="eyebrow">{% if e.upcoming %}Upcoming event{% else %}Past event{% endif %}</span>
+        <span class="eyebrow">{% if e.upcoming %}{{ t.upcoming_event }}{% else %}{{ t.past_event }}{% endif %}</span>
         <h1>{{ e.title }}</h1>
         <div class="head">
           {% include event-date.html event=e %}
           <div class="meta">
-            <span class="visually-hidden">{{ e.date | date: "%A, %B %-d, %Y" }}</span>
-            <span><svg class="i"><use href="#i-clock"/></svg>{{ e.time }}</span>
-            <a href="{% include event-map-url.html event=e %}" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>{{ e.venue }}</a>
+            <span class="visually-hidden">{{ e.date | ldate: t.date_long, page.lang }}</span>
+            <span><svg class="i"><use href="#i-clock"/></svg>{{ e | loc: "time", page.lang }}</span>
+            <a href="{% include event-map-url.html event=e %}" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>{{ e | loc: "venue", page.lang }}</a>
           </div>
         </div>
         <div class="text">
@@ -24,19 +26,19 @@ layout: page
           {%- if body != "" %}
 {{ content }}
           {%- else %}
-          <p>{{ e.summary }}</p>
+          <p>{{ e | loc: "summary", page.lang }}</p>
           {%- endif %}
         </div>
         {%- if show_tickets or e.facebook or e.albums or e.playlists %}
         <div class="actions">
-          {% if show_tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e.tickets_label | default: "Get tickets" }}</a>{% endif %}
+          {% if show_tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e | loc: "tickets_label", page.lang | default: t.get_tickets }}</a>{% endif %}
           {%- for album in e.albums %}
-          <a class="btn btn-cream" href="{{ album.url }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-photo"/></svg>{{ album.title | default: "Photo album" }}</a>
+          <a class="btn btn-cream" href="{{ album.url }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-photo"/></svg>{{ album | loc: "title", page.lang | default: t.photo_album }}</a>
           {%- endfor %}
           {%- for list in e.playlists %}
-          <a class="btn btn-cream" href="https://www.youtube.com/playlist?list={{ list }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-yt"/></svg>Videos on YouTube</a>
+          <a class="btn btn-cream" href="https://www.youtube.com/playlist?list={{ list }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-yt"/></svg>{{ t.videos_on_youtube }}</a>
           {%- endfor %}
-          {% if e.facebook %}<a class="link fb" href="{{ e.facebook }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>Event on Facebook</a>{% endif %}
+          {% if e.facebook %}<a class="link fb" href="{{ e.facebook }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>{{ t.event_on_facebook }}</a>{% endif %}
         </div>
         {%- endif %}
       </div>
@@ -44,13 +46,13 @@ layout: page
 
     {%- if e.youtube or e.playlists %}
     <section class="section" aria-labelledby="video">
-      <h2 class="big" id="video">Video</h2>
+      <h2 class="big" id="video">{{ t.video }}</h2>
       <div class="videos">
         {%- for list in e.playlists %}
-        <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list={{ list }}" title="{{ e.title | escape }} — video playlist" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list={{ list }}" title="{{ e.title | escape }} — {{ t.video_playlist }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {%- endfor %}
         {%- for id in e.youtube %}
-        <iframe src="https://www.youtube-nocookie.com/embed/{{ id }}" title="{{ e.title | escape }} — video {{ forloop.index }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ id }}" title="{{ e.title | escape }} — {{ t.video_n }} {{ forloop.index }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {%- endfor %}
       </div>
     </section>
@@ -58,7 +60,7 @@ layout: page
 
     {%- if e.photos %}
     <section class="section" aria-labelledby="photos">
-      <h2 class="big" id="photos">Photos</h2>
+      <h2 class="big" id="photos">{{ t.photos }}</h2>
       <div class="gallery">
         {%- for photo in e.photos %}
         <a href="{{ photo | prepend: '/' | relative_url }}"><img src="{{ photo | prepend: '/' | relative_url }}" alt="" loading="lazy"></a>

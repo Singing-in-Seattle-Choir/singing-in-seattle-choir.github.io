@@ -1,8 +1,9 @@
-<section class="rehearse" aria-label="Weekly rehearsals">
+{%- include lang.html -%}
+<section class="rehearse" aria-label="{{ t.weekly_rehearsals }}">
   <div style="display: flex; flex-direction: column; gap: 8px">
-    <span class="label">Weekly rehearsals</span>
-    <span class="title">Every Monday, 7 – 9 pm</span>
+    <span class="label">{{ t.weekly_rehearsals }}</span>
+    <span class="title">{{ t.every_monday }}</span>
     <a class="addr" href="https://maps.app.goo.gl/xgzWdnQ2xDiFsBnS6" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>1934 108th Ave NE, Bellevue, WA 98004</a>
   </div>
-  <span class="note">New singers are always welcome. Come to a rehearsal and sing with us.</span>
+  <span class="note">{{ t.rehearse_note }}</span>
 </section>

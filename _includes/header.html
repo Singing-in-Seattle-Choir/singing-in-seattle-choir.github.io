@@ -1,29 +1,36 @@
+{%- include lang.html -%}
 {%- assign donate = "https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir" -%}
+{%- assign home_url = lp | append: '/' | relative_url -%}
+{%- assign about_url = lp | append: '/about.html' | relative_url -%}
+{%- assign events_url = lp | append: '/events.html' | relative_url -%}
 <header>
     <div class="brand">
-      <a href="{{ '/' | relative_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}><img class="logo-dark" src="{{ '/assets/logo.svg' | relative_url }}" alt="Singing in Seattle Choir — home"><img class="logo-light" src="{{ '/assets/logo-light.svg' | relative_url }}" alt="Singing in Seattle Choir — home"></a>
-      <span class="eyebrow">Nonprofit community choir · Bellevue &amp; the Eastside</span>
+      <a href="{{ home_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}><img class="logo-dark" src="{{ '/assets/logo.svg' | relative_url }}" alt="{{ t.logo_alt }}"><img class="logo-light" src="{{ '/assets/logo-light.svg' | relative_url }}" alt="{{ t.logo_alt }}"></a>
+      <span class="eyebrow">{{ t.tagline }}</span>
     </div>
 
     <nav class="main" aria-label="Main">
-      <a href="{{ '/' | relative_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}>Home</a>
-      <a href="{{ '/about.html' | relative_url }}"{% if include.current == "about" %} aria-current="page"{% endif %}>About Us</a>
-      <a href="{{ '/events.html' | relative_url }}"{% if include.current == "events" %} aria-current="page"{% endif %}>Events</a>
-      {% include theme-toggle.html %}
-      <a class="btn btn-gold" href="{{ donate }}" target="_blank" rel="noopener">Donate</a>
+      <a href="{{ home_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}>{{ t.home }}</a>
+      <a href="{{ about_url }}"{% if include.current == "about" %} aria-current="page"{% endif %}>{{ t.about }}</a>
+      <a href="{{ events_url }}"{% if include.current == "events" %} aria-current="page"{% endif %}>{{ t.events }}</a>
+      {% include header-switches.html %}
+      <a class="btn btn-gold" href="{{ donate }}" target="_blank" rel="noopener">{{ t.donate }}</a>
     </nav>
 
     <div class="mobile-actions">
-      <a class="btn btn-gold" style="font-size: 15px; padding: 12px 16px" href="{{ donate }}" target="_blank" rel="noopener">Donate</a>
-      {% include theme-toggle.html %}
+      <a class="btn btn-gold" style="font-size: 15px; padding: 12px 16px" href="{{ donate }}" target="_blank" rel="noopener">{{ t.donate }}</a>
+      {% include header-switches.html %}
       <details class="menu">
-        <summary aria-label="Menu"><svg class="i" style="width: 22px; height: 22px"><use href="#i-menu"/></svg></summary>
+        <summary aria-label="{{ t.menu }}"><svg class="i" style="width: 22px; height: 22px"><use href="#i-menu"/></svg></summary>
         <nav class="panel" aria-label="Main">
-          <a href="{{ '/' | relative_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}>Home</a>
-          <a href="{{ '/about.html' | relative_url }}"{% if include.current == "about" and include.sub == nil %} aria-current="page"{% endif %}>About Us</a>
-          <a href="{{ '/board.html' | relative_url }}"{% if include.sub == "board" %} aria-current="page"{% endif %} style="padding-left: 22px; font-size: 16px; font-weight: 500">Board of Directors</a>
-          <a href="{{ '/transparency.html' | relative_url }}"{% if include.sub == "transparency" %} aria-current="page"{% endif %} style="padding-left: 22px; font-size: 16px; font-weight: 500">Transparency</a>
-          <a href="{{ '/events.html' | relative_url }}"{% if include.current == "events" %} aria-current="page"{% endif %}>Events</a>
+          <a href="{{ home_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}>{{ t.home }}</a>
+          <a href="{{ about_url }}"{% if include.current == "about" and include.sub == nil %} aria-current="page"{% endif %}>{{ t.about }}</a>
+          <a href="{{ lp | append: '/board.html' | relative_url }}"{% if include.sub == "board" %} aria-current="page"{% endif %} style="padding-left: 22px; font-size: 16px; font-weight: 500">{{ t.board }}</a>
+          <a href="{{ lp | append: '/transparency.html' | relative_url }}"{% if include.sub == "transparency" %} aria-current="page"{% endif %} style="padding-left: 22px; font-size: 16px; font-weight: 500">{{ t.transparency }}</a>
+          <a href="{{ events_url }}"{% if include.current == "events" %} aria-current="page"{% endif %}>{{ t.events }}</a>
+          {%- if alt_url %}
+          <a class="lang" href="{{ alt_url | relative_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}" onclick="try { localStorage.setItem('lang', '{{ alt_lang }}') } catch (e) {}">{{ t.other_lang_name }}</a>
+          {%- endif %}
         </nav>
       </details>
     </div>

@@ -4,38 +4,4 @@ nav: events
 title: Events
 description: Upcoming concerts and performances by Singing in Seattle Choir in Bellevue and the Eastside, plus past events.
 ---
-{%- comment -%} Events come from _events/; see _config.yml. {%- endcomment -%}
-{%- assign upcoming = site.events | where: "upcoming", true -%}
-{%- assign past = site.events | where: "upcoming", false | reverse -%}
-    <section class="page-hero">
-      <span class="eyebrow">Events</span>
-      <h1>Come hear <em>us sing</em></h1>
-      <p class="lead">Concerts, community performances and celebrations around Bellevue and the Eastside.</p>
-    </section>
-
-    <section class="section" aria-labelledby="upcoming">
-      <div class="section-head"><span class="label">Upcoming</span><h2 class="big" id="upcoming">Upcoming events</h2></div>
-      {%- if upcoming.size > 0 %}
-      <div class="cards">
-        {%- for event in upcoming %}
-        {% include event-card.html event=event next=forloop.first %}
-        {%- endfor %}
-      </div>
-      {%- else %}
-      <p class="lead">No upcoming events are scheduled right now. Follow us on <a href="https://www.facebook.com/profile.php?id=61584344495662" target="_blank" rel="noopener">Facebook</a> or <a href="https://www.instagram.com/singinginseattle/" target="_blank" rel="noopener">Instagram</a> to hear about the next one.</p>
-      {%- endif %}
-    </section>
-
-    {%- if past.size > 0 %}
-    <section class="section" aria-labelledby="past" style="gap: 18px">
-      <div class="section-head"><span class="label">Archive</span><h2 class="big" id="past">Past events</h2></div>
-      <div class="past">
-        {%- for event in past %}
-        {% include event-past.html event=event %}
-        {%- endfor %}
-      </div>
-      <a class="watch" href="https://www.youtube.com/@singinginseattlechoir1725" target="_blank" rel="noopener"><svg class="i" style="width: 22px; height: 22px"><use href="#i-play"/></svg>Watch past performances on YouTube</a>
-    </section>
-    {%- endif %}
-
-    {% include rehearse.html %}
+{% include events-page.html %}

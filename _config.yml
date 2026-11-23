@@ -1,4 +1,6 @@
 title: Singing in Seattle Choir
+# Used for absolute links (hreflang). Update when the custom domain is set up.
+url: https://singing-in-seattle-choir.github.io
 timezone: America/Los_Angeles
 
 # Events are dated in the future; publish them anyway.
@@ -12,7 +14,16 @@ collections:
     output: true
     permalink: /events/:name/
 
+# Pages are in English unless they live under ru/ (see _data/i18n.yml).
 defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en
+  - scope:
+      path: ru
+    values:
+      lang: ru
   - scope:
       type: events
     values:

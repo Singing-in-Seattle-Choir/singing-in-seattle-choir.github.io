@@ -1,17 +1,18 @@
+{%- include lang.html -%}
 <footer class="site-footer">
   <div class="cols">
     <div class="col">
       <span class="brandname">Singing in <em style="color: var(--gold)">Seattle</em> Choir</span>
-      <span class="muted">Spreading the joy of music to all who listen.</span>
-      <a class="btn btn-gold" style="align-self: flex-start; margin-top: 6px; font-size: 15px" href="https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir" target="_blank" rel="noopener">Donate</a>
+      <span class="muted">{{ t.slogan }}</span>
+      <a class="btn btn-gold" style="align-self: flex-start; margin-top: 6px; font-size: 15px" href="https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir" target="_blank" rel="noopener">{{ t.donate }}</a>
     </div>
     <div class="col">
-      <span class="label">Rehearsals</span>
-      <span style="font-size: 17px; font-weight: 600">Mondays, 7 – 9 pm</span>
+      <span class="label">{{ t.rehearsals }}</span>
+      <span style="font-size: 17px; font-weight: 600">{{ t.rehearsal_time }}</span>
       <a class="muted" style="display: flex; gap: 8px" href="https://maps.app.goo.gl/xgzWdnQ2xDiFsBnS6" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>1934 108th Ave NE, Bellevue, WA 98004</a>
     </div>
     <div class="col">
-      <span class="label">Contact</span>
+      <span class="label">{{ t.contact }}</span>
       <a style="display: flex; align-items: center; gap: 8px; font-size: 15px" href="mailto:singinginseattlechoir@gmail.com"><svg class="i"><use href="#i-mail"/></svg>singinginseattlechoir@gmail.com</a>
       <div class="round">
         <a href="https://www.facebook.com/profile.php?id=61584344495662" aria-label="Facebook" target="_blank" rel="noopener"><svg class="i" style="width: 20px; height: 20px"><use href="#i-fb"/></svg></a>
@@ -20,5 +21,5 @@
       </div>
     </div>
   </div>
-  <div class="legal">© 2026 Singing in Seattle Choir · 501(c)(3) tax-exempt nonprofit · Tax ID 88-1743983</div>
+  <div class="legal">{{ t.legal }}</div>
 </footer>

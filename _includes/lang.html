@@ -1,0 +1,6 @@
+{%- comment -%}
+  Sets `t` (interface text for this page's language, from _data/i18n.yml)
+  and `lp` (the URL prefix of that language: "" or "/ru").
+{%- endcomment -%}
+{%- assign t = site.data.i18n[page.lang] | default: site.data.i18n.en -%}
+{%- if page.lang == "ru" -%}{%- assign lp = "/ru" -%}{%- else -%}{%- assign lp = "" -%}{%- endif -%}

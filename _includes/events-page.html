@@ -1,0 +1,36 @@
+{%- comment -%} The Events page, in either language. Events come from _events/; see _config.yml. {%- endcomment -%}
+{%- include lang.html -%}
+{%- assign upcoming = site.events | where: "upcoming", true -%}
+{%- assign past = site.events | where: "upcoming", false | reverse -%}
+    <section class="page-hero">
+      <span class="eyebrow">{{ t.events_eyebrow }}</span>
+      <h1>{{ t.events_h1 }}</h1>
+      <p class="lead">{{ t.events_lead }}</p>
+    </section>
+
+    <section class="section" aria-labelledby="upcoming">
+      <div class="section-head"><span class="label">{{ t.upcoming_label }}</span><h2 class="big" id="upcoming">{{ t.upcoming_title }}</h2></div>
+      {%- if upcoming.size > 0 %}
+      <div class="cards">
+        {%- for event in upcoming %}
+        {% include event-card.html event=event next=forloop.first %}
+        {%- endfor %}
+      </div>
+      {%- else %}
+      <p class="lead">{{ t.no_upcoming }}</p>
+      {%- endif %}
+    </section>
+
+    {%- if past.size > 0 %}
+    <section class="section" aria-labelledby="past" style="gap: 18px">
+      <div class="section-head"><span class="label">{{ t.archive }}</span><h2 class="big" id="past">{{ t.past_events }}</h2></div>
+      <div class="past">
+        {%- for event in past %}
+        {% include event-past.html event=event %}
+        {%- endfor %}
+      </div>
+      <a class="watch" href="https://www.youtube.com/@singinginseattlechoir1725" target="_blank" rel="noopener"><svg class="i" style="width: 22px; height: 22px"><use href="#i-play"/></svg>{{ t.watch_youtube }}</a>
+    </section>
+    {%- endif %}
+
+    {% include rehearse.html %}

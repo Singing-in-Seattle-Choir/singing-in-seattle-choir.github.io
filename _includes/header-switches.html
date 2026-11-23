@@ -1,0 +1,2 @@
+<span class="switches">{%- if alt_url %}<a class="lang-switch" href="{{ alt_url | relative_url }}" hreflang="{{ alt_lang }}" lang="{{ alt_lang }}" aria-label="{{ t.other_lang_label }}" onclick="try { localStorage.setItem('lang', '{{ alt_lang }}') } catch (e) {}">{{ t.other_lang }}</a>{% endif %}
+<button type="button" class="theme-toggle" aria-label="{{ t.theme_toggle }}" onclick="toggleTheme()"><svg class="i to-light"><use href="#i-sun"/></svg><svg class="i to-dark"><use href="#i-moon"/></svg></button></span>

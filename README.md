@@ -23,8 +23,10 @@ time: 5:00 – 10:00 PM
 venue: Highland Community Center, 14224 NE Bel-Red Rd, Bellevue
 poster: assets/events/magic-poster.webp
 summary: One or two sentences for the event cards and the home page.
+summary_ru: "Одно-два предложения по-русски."   # Russian version of summary
 tickets: https://www.zeffy.com/...        # shown only while upcoming
 tickets_label: Get garden tickets         # optional, default "Get tickets"
+tickets_label_ru: Билеты в сад            # optional, default "Купить билеты"
 facebook: https://www.facebook.com/events/...   # optional
 # Optional:
 # poster_position: center 30%   # crop of the poster on event cards
@@ -41,6 +43,23 @@ facebook: https://www.facebook.com/events/...   # optional
 Optional longer text for the event page (Markdown). Without it, the page
 shows the summary.
 ```
+
+## Russian version
+
+Every page has a Russian twin under `/ru/` (`/ru/about.html`,
+`/ru/events/<name>/`, ...), and the header links each page to its twin.
+English pages send visitors whose browser prefers Russian to the Russian
+page, unless they picked English with the switcher.
+
+- Page text lives in `ru/*.html`, next to the English pages in the root.
+- Header, footer and event-list text for both languages is in
+  `_data/i18n.yml`.
+- Event pages in Russian are generated from the same `_events/` files
+  (`_plugins/events.rb`). Any field can have a Russian variant with an
+  `_ru` suffix (`summary_ru`, `tickets_label_ru`, `poster_alt_ru`,
+  `time_ru`, ...); without one, the English value is used. Event titles
+  stay in English. Times are shown in 24-hour format on Russian pages
+  automatically.
 
 ## Building locally
 

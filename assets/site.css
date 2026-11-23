@@ -360,4 +360,15 @@ a.title:hover { color: var(--gold-hi); }
 }
 :root[data-theme="light"] .theme-toggle .to-light { display: none; }
 :root[data-theme="light"] .theme-toggle .to-dark { display: block; }
-nav.main .theme-toggle { margin-left: -16px; }
+.switches { display: flex; align-items: center; gap: 8px; }
+nav.main .switches { margin-left: -16px; }
+.switches .lang-switch { width: 44px; padding: 0; height: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); border-radius: 999px; color: var(--text); font-size: 14px; font-weight: 600; letter-spacing: .04em; text-decoration: none; }
+.switches .lang-switch:hover { border-color: var(--gold); color: var(--gold); }
+/* On phones the language link lives in the menu, to keep the header short. */
+.mobile-actions .lang-switch { display: none; }
+/* "Поддержать" is longer than "Donate"; keep it clear of the logo on phones. */
+:root:lang(ru) .mobile-actions .btn { padding: 11px 12px !important; font-size: 13px !important; }
+.menu .panel a.lang { color: var(--gold); font-weight: 500; font-size: 16px; }
+
+/* Russian pages: DM Serif Display has no Cyrillic, so headings use Playfair Display. */
+:root:lang(ru) { --serif: 'Playfair Display', Georgia, serif; }

@@ -1,0 +1,113 @@
+# Interface text shared by all pages, in each language.
+# Pages pick their set by `lang` (en by default, ru for everything under ru/).
+en:
+  site_name: Singing in Seattle Choir
+  tagline: "Nonprofit community choir · Bellevue &amp; the Eastside"
+  og_description: "Spreading the joy of music to all who listen. Nonprofit community choir in Bellevue & the Eastside."
+  logo_alt: Singing in Seattle Choir — home
+  home: Home
+  about: About Us
+  board: Board of Directors
+  transparency: Transparency
+  events: Events
+  donate: Donate
+  menu: Menu
+  theme_toggle: Switch between light and dark theme
+  other_lang: RU
+  other_lang_label: Русская версия
+  other_lang_name: По-русски
+  slogan: Spreading the joy of music to all who listen.
+  rehearsals: Rehearsals
+  rehearsal_time: "Mondays, 7 – 9 pm"
+  contact: Contact
+  legal: "© 2026 Singing in Seattle Choir · 501(c)(3) tax-exempt nonprofit · Tax ID 88-1743983"
+  legal_short: "© 2026 Singing in Seattle Choir · 501(c)(3) nonprofit · Tax ID 88-1743983"
+  weekly_rehearsals: Weekly rehearsals
+  every_monday: "Every Monday, 7 – 9 pm"
+  rehearse_note: New singers are always welcome. Come to a rehearsal and sing with us.
+  # dates
+  date_long: "%A, %B %-d, %Y"
+  date_short: "%A, %b %-d, %Y"
+  date_no_year: "%A, %B %-d"
+  # events
+  next_performance: Next performance
+  all_events: All events
+  performances: Performances
+  no_next_title: Our next concert is in the works
+  no_next_text: Follow us on Facebook or Instagram to hear about it first, or look back at our past performances.
+  past_events: Past events
+  next_up: Next up
+  get_tickets: Get tickets
+  event_on_facebook: Event on Facebook
+  upcoming_event: Upcoming event
+  past_event: Past event
+  poster_for: "Poster for"
+  photo_album: Photo album
+  videos_on_youtube: Videos on YouTube
+  video: Video
+  video_playlist: video playlist
+  video_n: video
+  photos: Photos
+  events_eyebrow: Events
+  events_h1: "Come hear <em>us sing</em>"
+  events_lead: Concerts, community performances and celebrations around Bellevue and the Eastside.
+  upcoming_label: Upcoming
+  upcoming_title: Upcoming events
+  no_upcoming: 'No upcoming events are scheduled right now. Follow us on <a href="https://www.facebook.com/profile.php?id=61584344495662" target="_blank" rel="noopener">Facebook</a> or <a href="https://www.instagram.com/singinginseattle/" target="_blank" rel="noopener">Instagram</a> to hear about the next one.'
+  archive: Archive
+  watch_youtube: Watch past performances on YouTube
+
+ru:
+  site_name: Singing in Seattle Choir
+  tagline: "Некоммерческий хор · Белвью и Истсайд"
+  og_description: "Дарим радость музыки всем, кто слушает. Некоммерческий хор в Белвью и Истсайде."
+  logo_alt: Хор Singing in Seattle — на главную
+  home: Главная
+  about: О нас
+  board: Правление
+  transparency: Отчётность
+  events: Выступления
+  donate: Поддержать
+  menu: Меню
+  theme_toggle: Переключить светлую или тёмную тему
+  other_lang: EN
+  other_lang_label: English version
+  other_lang_name: In English
+  slogan: Дарим радость музыки всем, кто слушает.
+  rehearsals: Репетиции
+  rehearsal_time: "По понедельникам, 19:00 – 21:00"
+  contact: Контакты
+  legal: "© 2026 Singing in Seattle Choir · некоммерческая организация 501(c)(3), освобождённая от налогов · Tax ID 88-1743983"
+  legal_short: "© 2026 Singing in Seattle Choir · некоммерческая организация 501(c)(3) · Tax ID 88-1743983"
+  weekly_rehearsals: Репетиции каждую неделю
+  every_monday: "По понедельникам, 19:00 – 21:00"
+  rehearse_note: Новым певцам мы всегда рады. Приходите на репетицию и пойте с нами.
+  date_long: "%A, %-d %B %Y"
+  date_short: "%A, %-d %b %Y"
+  date_no_year: "%A, %-d %B"
+  next_performance: Ближайшее выступление
+  all_events: Все выступления
+  performances: Выступления
+  no_next_title: Следующий концерт уже готовится
+  no_next_text: Следите за нами в Facebook или Instagram, чтобы узнать о нём первыми, или посмотрите наши прошлые выступления.
+  past_events: Прошедшие выступления
+  next_up: Ближайшее
+  get_tickets: Купить билеты
+  event_on_facebook: Событие в Facebook
+  upcoming_event: Предстоящее выступление
+  past_event: Прошедшее выступление
+  poster_for: "Афиша:"
+  photo_album: Фотоальбом
+  videos_on_youtube: Видео на YouTube
+  video: Видео
+  video_playlist: плейлист
+  video_n: видео
+  photos: Фото
+  events_eyebrow: Выступления
+  events_h1: "Приходите <em>нас послушать</em>"
+  events_lead: Концерты, выступления на праздниках и фестивалях в Белвью и Истсайде.
+  upcoming_label: Скоро
+  upcoming_title: Ближайшие выступления
+  no_upcoming: 'Сейчас запланированных выступлений нет. Следите за нами в <a href="https://www.facebook.com/profile.php?id=61584344495662" target="_blank" rel="noopener">Facebook</a> или <a href="https://www.instagram.com/singinginseattle/" target="_blank" rel="noopener">Instagram</a>, чтобы узнать о следующем.'
+  archive: Архив
+  watch_youtube: Наши выступления на YouTube

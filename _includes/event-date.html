@@ -1,1 +1,2 @@
-<div class="date" aria-hidden="true"><span class="m">{{ include.event.date | date: "%b" }}</span><span class="d">{{ include.event.date | date: "%-d" }}</span><span class="w">{{ include.event.date | date: "%A" }}</span></div>
+{%- assign d = include.event.date -%}
+<div class="date" aria-hidden="true"><span class="m">{{ d | ldate: "%b", page.lang }}</span><span class="d">{{ d | date: "%-d" }}</span><span class="w">{{ d | ldate: "%A", page.lang }}</span></div>

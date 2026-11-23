@@ -5,6 +5,7 @@ venue: Highland Community Center, 14224 NE Bel-Red Rd, Bellevue
 poster: assets/events/rocknroll-poster.webp
 photo: assets/events/past-rocknroll.webp
 summary: A rock ’n’ roll night together with the local band Tomorrow Never Comes, followed by an afterparty with karaoke for all ages.
+summary_ru: Вечер рок-н-ролла вместе с местной группой Tomorrow Never Comes, а после — вечеринка с караоке для всех возрастов.
 tickets: https://www.zeffy.com/en-US/ticketing/f7598195-9dbf-438f-98de-6bcef1d26235
 albums:
   - url: https://photos.app.goo.gl/12C1GnbJWPurU7Kx6
