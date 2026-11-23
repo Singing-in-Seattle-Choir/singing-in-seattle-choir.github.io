@@ -17,6 +17,7 @@ defaults:
       type: events
     values:
       layout: event
+      nav: events
 
 exclude:
   - README.md
