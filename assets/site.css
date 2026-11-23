@@ -135,7 +135,7 @@ h2.big { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 42px
 .card .meta { font-size: 16px; gap: 8px; }
 .card .meta a { color: var(--cream); display: flex; align-items: center; gap: 8px; text-underline-offset: 3px; }
 .card p { margin: 0; font-size: 15px; color: var(--muted); }
-.card .actions { margin-top: auto; padding-top: 6px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.card .actions { margin-top: auto; padding-top: 6px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 .btn-navy { background: var(--navy); color: var(--cream) !important; }
 .card .actions a.link { color: var(--gold); font-size: 15px; font-weight: 600; padding: 10px 0; }
 .card .actions a.fb { display: inline-flex; align-items: center; gap: 6px; }
