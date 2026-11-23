@@ -1,0 +1,13 @@
+title: Singing in Seattle Choir
+timezone: America/Los_Angeles
+
+# One file per event in _events/. Pages and lists are built from these files.
+collections:
+  events:
+    output: true
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

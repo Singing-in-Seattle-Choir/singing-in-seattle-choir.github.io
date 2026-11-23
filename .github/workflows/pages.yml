@@ -1,0 +1,66 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Events become "past" the day after their date. Rebuild every night and
+  # deploy only if the list of upcoming events changed (see build-state.txt).
+  # 09:30 UTC is 1:30 or 2:30 AM in Seattle.
+  schedule:
+    - cron: "30 9 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.check.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+      - id: pages
+        uses: actions/configure-pages@v6
+      - name: Build
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - name: Check whether upcoming events changed
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" != schedule ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          deployed=$(curl -fsSL "${{ steps.pages.outputs.base_url }}/build-state.txt" || echo "unavailable")
+          if [ "$deployed" = "$(cat _site/build-state.txt)" ]; then
+            echo "Upcoming events unchanged, nothing to deploy."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Upcoming events changed, deploying."
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.check.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v5
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
