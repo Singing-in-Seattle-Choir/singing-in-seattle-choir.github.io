@@ -8,7 +8,5 @@ summary: Our spring concert, a musical journey with songs that cross oceans and 
 tickets: https://www.zeffy.com/en-US/ticketing/around-the-world-spring-concert
 albums:
   - url: https://photos.app.goo.gl/g5y5K2Np72sxr8iG8
-  - url: https://photos.app.goo.gl/6yF7vQEtKKXYPYbL9
-    title: More photos by Armen
 playlists: [PLF7UeV6WMLNE]
 ---
