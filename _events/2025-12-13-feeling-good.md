@@ -7,4 +7,6 @@ photo: assets/events/past-feeling-good.webp
 summary: A winter concert full of good energy and winter tunes from around the world, followed by an afterparty with karaoke for all ages.
 tickets: https://www.zeffy.com/en-US/ticketing/feeling-good-winter-concert
 facebook: https://www.facebook.com/share/1BnxUFL2Rv/
+albums:
+  - url: https://photos.app.goo.gl/69EefmLPXU6Ajh6y5
 ---
