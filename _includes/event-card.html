@@ -1,0 +1,18 @@
+{%- assign e = include.event -%}
+<article class="card">
+          <a href="{{ e.url | relative_url }}" tabindex="-1" aria-hidden="true"><img class="poster" src="{{ e.poster | prepend: '/' | relative_url }}" alt="" style="object-position: {{ e.poster_position | default: 'center' }}" loading="lazy"></a>
+          {% if include.next %}<span class="badge">Next up</span>{% endif %}
+          <div class="head">
+            {% include event-date.html event=e %}
+            <h3><a class="title" href="{{ e.url | relative_url }}">{{ e.title }}<span class="visually-hidden"> — {{ e.date | date: "%A, %B %-d, %Y" }}</span></a></h3>
+          </div>
+          <div class="meta">
+            <span><svg class="i"><use href="#i-clock"/></svg>{{ e.time }}</span>
+            <a href="{% include event-map-url.html event=e %}" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>{{ e.venue }}</a>
+          </div>
+          <p>{{ e.summary }}</p>
+          <div class="actions">
+            {% if e.tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e.tickets_label | default: "Get tickets" }}</a>{% endif %}
+            {% if e.facebook %}<a class="link fb" href="{{ e.facebook }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>Event on Facebook</a>{% endif %}
+          </div>
+        </article>

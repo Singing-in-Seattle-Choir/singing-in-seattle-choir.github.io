@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} — Singing in Seattle Choir</title>
+<meta name="description" content="{{ page.description | default: page.summary | escape }}">
+<meta property="og:title" content="{{ page.og_title | default: 'Singing in Seattle Choir' | escape }}">
+<meta property="og:description" content="{{ page.og_description | default: 'Spreading the joy of music to all who listen. Nonprofit community choir in Bellevue & the Eastside.' | escape }}">
+<meta property="og:image" content="{{ page.og_image | default: page.poster | default: 'assets/choir.webp' | prepend: '/' | relative_url }}">
+<link rel="icon" href="{{ '/assets/logo.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+</head>
+<body>
+{% include icons.html %}
+
+<div class="wrap">
+  <div class="staff" aria-hidden="true"></div>
+
+  {% include header.html current=page.nav %}
+
+  <main>
+{{ content }}
+  </main>
+
+  {% include site-footer.html %}
+</div>
+</body>
+</html>

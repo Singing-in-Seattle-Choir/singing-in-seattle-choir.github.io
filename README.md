@@ -8,6 +8,36 @@ Built with [Jekyll](https://jekyllrb.com/) and published to GitHub Pages by
 Events become "past" the day after their date. The workflow also runs every
 night and redeploys the site only when the list of upcoming events has changed.
 
+## Events
+
+Each event is one file in `_events/`, named `YYYY-MM-DD-short-name.md`; the
+date comes from the file name. It gets its own page at
+`/events/YYYY-MM-DD-short-name/`, and the Events page and the home page list
+events from these files. The address never changes, even after the event is
+over.
+
+```yaml
+---
+title: “Magic in the air” winter concert
+time: 5:00 – 10:00 PM
+venue: Highland Community Center, 14224 NE Bel-Red Rd, Bellevue
+poster: assets/events/magic-poster.webp
+summary: One or two sentences for the event cards and the home page.
+tickets: https://www.zeffy.com/...        # shown only while upcoming
+tickets_label: Get garden tickets         # optional, default "Get tickets"
+facebook: https://www.facebook.com/events/...   # optional
+# Optional:
+# poster_position: center 30%   # crop of the poster on event cards
+# poster_alt: ...               # default "Poster for <title>"
+# map: https://maps.app.goo.gl/...   # default: Google Maps search for venue
+# photo: assets/events/...webp  # thumbnail in "Past events"; default: poster
+# youtube: [VIDEO_ID, ...]      # embedded on the event page
+# photos: [assets/events/....webp, ...]   # gallery on the event page
+---
+Optional longer text for the event page (Markdown). Without it, the page
+shows the summary.
+```
+
 ## Building locally
 
 With Ruby and Bundler installed:

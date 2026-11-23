@@ -4,13 +4,9 @@ layout: null
 {%- comment -%}
 Upcoming events at build time, one URL per line. The scheduled rebuild
 compares this with the deployed copy and redeploys only when it changed,
-that is, when an event has moved from upcoming to past. An event stays
-upcoming through its date (site timezone) and becomes past the next day.
+that is, when an event has moved from upcoming to past (see _plugins/events.rb).
 {%- endcomment -%}
-{%- assign today = site.time | date: "%Y-%m-%d" -%}
-{%- for event in site.events -%}
-{%- assign day = event.date | date: "%Y-%m-%d" -%}
-{%- if day >= today %}
+{%- assign upcoming = site.events | where: "upcoming", true -%}
+{%- for event in upcoming %}
 {{ event.url }}
-{%- endif -%}
 {%- endfor %}

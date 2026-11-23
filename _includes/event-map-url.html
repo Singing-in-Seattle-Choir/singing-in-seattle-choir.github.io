@@ -1,0 +1,1 @@
+{%- if include.event.map -%}{{ include.event.map }}{%- else -%}https://www.google.com/maps/search/?api=1&amp;query={{ include.event.venue | url_encode }}{%- endif -%}

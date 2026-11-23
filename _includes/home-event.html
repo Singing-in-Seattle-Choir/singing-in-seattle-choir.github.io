@@ -1,0 +1,29 @@
+{%- assign upcoming = site.events | where: "upcoming", true -%}
+{%- assign e = upcoming.first -%}
+{%- if e %}
+      <article class="event" aria-labelledby="event-title">
+        <span class="label">Next performance</span>
+        <div class="head">
+          {% include event-date.html event=e %}
+          <h2 id="event-title"><a class="title" href="{{ e.url | relative_url }}">{{ e.title }}<span class="visually-hidden"> — {{ e.date | date: "%A, %B %-d" }}</span></a></h2>
+        </div>
+        <div class="meta">
+          <span><svg class="i"><use href="#i-clock"/></svg>{{ e.time }}</span>
+          <span><svg class="i"><use href="#i-pin"/></svg>{{ e.venue }}</span>
+        </div>
+        <p>{{ e.summary }}</p>
+        <div class="actions">
+          {% if e.tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e.tickets_label | default: "Get tickets" }}</a>{% endif %}
+          <a class="link" href="{{ '/events.html' | relative_url }}">All events</a>
+        </div>
+      </article>
+{%- else %}
+      <article class="event" aria-labelledby="event-title">
+        <span class="label">Performances</span>
+        <h2 id="event-title">Our next concert is in the works</h2>
+        <p>Follow us on Facebook or Instagram to hear about it first, or look back at our past performances.</p>
+        <div class="actions">
+          <a class="btn btn-cream" href="{{ '/events.html' | relative_url }}">Past events</a>
+        </div>
+      </article>
+{%- endif %}

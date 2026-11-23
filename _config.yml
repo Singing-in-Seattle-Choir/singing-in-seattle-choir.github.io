@@ -1,10 +1,22 @@
 title: Singing in Seattle Choir
 timezone: America/Los_Angeles
 
-# One file per event in _events/. Pages and lists are built from these files.
+# Events are dated in the future; publish them anyway.
+future: true
+
+# One file per event in _events/, named YYYY-MM-DD-name.md; the date comes
+# from the file name. Each event gets a page at /events/YYYY-MM-DD-name/,
+# and the Events and home pages list events from the same files.
 collections:
   events:
     output: true
+    permalink: /events/:name/
+
+defaults:
+  - scope:
+      type: events
+    values:
+      layout: event
 
 exclude:
   - README.md

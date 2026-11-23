@@ -1,0 +1,62 @@
+---
+layout: page
+nav: events
+---
+{%- assign e = page -%}
+{%- assign show_tickets = false -%}{%- if e.upcoming and e.tickets -%}{%- assign show_tickets = true -%}{%- endif -%}
+{%- capture poster_alt -%}{%- if e.poster_alt -%}{{ e.poster_alt }}{%- else -%}Poster for {{ e.title }}{%- endif -%}{%- endcapture -%}
+    <a class="back" href="{{ '/events.html' | relative_url }}"><svg class="i"><use href="#i-back"/></svg>All events</a>
+
+    <article class="event-page">
+      <img class="poster" src="{{ e.poster | prepend: '/' | relative_url }}" alt="{{ poster_alt | escape }}">
+      <div class="info">
+        <span class="eyebrow">{% if e.upcoming %}Upcoming event{% else %}Past event{% endif %}</span>
+        <h1>{{ e.title }}</h1>
+        <div class="head">
+          {% include event-date.html event=e %}
+          <div class="meta">
+            <span class="visually-hidden">{{ e.date | date: "%A, %B %-d, %Y" }}</span>
+            <span><svg class="i"><use href="#i-clock"/></svg>{{ e.time }}</span>
+            <a href="{% include event-map-url.html event=e %}" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>{{ e.venue }}</a>
+          </div>
+        </div>
+        <div class="text">
+          {%- assign body = content | strip -%}
+          {%- if body != "" %}
+{{ content }}
+          {%- else %}
+          <p>{{ e.summary }}</p>
+          {%- endif %}
+        </div>
+        {%- if show_tickets or e.facebook %}
+        <div class="actions">
+          {% if show_tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e.tickets_label | default: "Get tickets" }}</a>{% endif %}
+          {% if e.facebook %}<a class="link fb" href="{{ e.facebook }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>Event on Facebook</a>{% endif %}
+        </div>
+        {%- endif %}
+      </div>
+    </article>
+
+    {%- if e.youtube %}
+    <section class="section" aria-labelledby="video">
+      <h2 class="big" id="video">Video</h2>
+      <div class="videos">
+        {%- for id in e.youtube %}
+        <iframe src="https://www.youtube-nocookie.com/embed/{{ id }}" title="{{ e.title | escape }} — video {{ forloop.index }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+
+    {%- if e.photos %}
+    <section class="section" aria-labelledby="photos">
+      <h2 class="big" id="photos">Photos</h2>
+      <div class="gallery">
+        {%- for photo in e.photos %}
+        <a href="{{ photo | prepend: '/' | relative_url }}"><img src="{{ photo | prepend: '/' | relative_url }}" alt="" loading="lazy"></a>
+        {%- endfor %}
+      </div>
+    </section>
+    {%- endif %}
+
+    {% include rehearse.html %}

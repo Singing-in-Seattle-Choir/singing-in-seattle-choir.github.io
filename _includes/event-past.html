@@ -1,0 +1,2 @@
+{%- assign e = include.event -%}
+<a href="{{ e.url | relative_url }}"><img src="{{ e.photo | default: e.poster | prepend: '/' | relative_url }}" alt="" loading="lazy"><span class="text"><span class="when">{{ e.date | date: "%A, %b %-d, %Y" }}</span><span class="name">{{ e.title }}</span></span><span class="arrow"><svg class="i" style="width: 22px; height: 22px"><use href="#i-arrow"/></svg></span></a>
