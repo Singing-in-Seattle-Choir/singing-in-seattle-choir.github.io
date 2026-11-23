@@ -217,9 +217,9 @@ h2.big { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 42px
 .photos { position: relative; margin-top: 56px; display: flex; flex-wrap: wrap; gap: 20px; }
 .photos img { flex: var(--ar) 1 calc(var(--ar) * 100px); min-width: 0; height: auto; aspect-ratio: var(--ar); object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
 
-.vision { position: relative; margin-top: 56px; background: var(--cream); color: var(--navy); border-radius: 12px; padding: 28px 44px; display: flex; flex-direction: column; gap: 10px; }
-.vision .label { color: var(--gold-dark); }
-.vision p { margin: 0; font-family: var(--serif); font-size: 30px; line-height: 1.2; }
+.vision { position: relative; margin-top: 56px; border-top: 1px solid var(--divider); border-bottom: 1px solid var(--divider); padding: 44px 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.vision p { margin: 0; max-width: 820px; font-family: var(--serif); font-size: 40px; line-height: 1.2; color: var(--cream); }
+.vision p em { font-style: italic; color: var(--gold); }
 
 .join { position: relative; margin-top: 56px; border-top: 1px solid var(--divider); padding-top: 44px; display: flex; flex-direction: column; gap: 28px; }
 .join .top { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
@@ -262,8 +262,8 @@ h2.big { margin: 0; font-family: var(--serif); font-weight: 400; font-size: 42px
   .stats b { font-size: 28px; }
   .stats span { font-size: 12px; }
   .tile { padding: 22px; }
-  .vision { padding: 20px 22px; }
-  .vision p { font-size: 22px; }
+  .vision { padding: 30px 8px; }
+  .vision p { font-size: 28px; }
   .join { padding-top: 28px; gap: 22px; }
   .join .btns { flex-direction: column; width: 100%; }
   .join .btns .btn { width: 100%; }
