@@ -1,0 +1,25 @@
+---
+layout: page
+title: Page not found
+description: This page does not exist on the Singing in Seattle Choir website.
+permalink: /404.html
+---
+<script>
+  // The site used to live under /Website/ (before the repository was renamed).
+  // Send old links to the same page without that prefix.
+  (function () {
+    var m = location.pathname.match(/^\/website(\/.*)?$/i);
+    if (m) location.replace((m[1] || "/") + location.search + location.hash);
+  })();
+</script>
+    <section class="page-hero">
+      <span class="eyebrow">Error 404</span>
+      <h1>This page is <em>not here</em></h1>
+      <p class="lead">The page you are looking for may have moved. Try the home page or our events.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px">
+        <a class="btn btn-gold" href="{{ '/' | relative_url }}">Home</a>
+        <a class="btn btn-outline" href="{{ '/events.html' | relative_url }}">Events</a>
+      </div>
+    </section>
+
+    {% include rehearse.html %}
