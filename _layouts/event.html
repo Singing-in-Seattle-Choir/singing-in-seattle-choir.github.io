@@ -3,6 +3,8 @@ layout: page
 ---
 {%- include lang.html -%}
 {%- assign e = page -%}
+{%- comment -%} site.show_albums (in _config.yml) hides album links while albums are being tidied. {%- endcomment -%}
+{%- if site.show_albums -%}{%- assign albums = e.albums -%}{%- else -%}{%- assign albums = nil -%}{%- endif -%}
 {%- assign show_tickets = false -%}{%- if e.upcoming and e.tickets -%}{%- assign show_tickets = true -%}{%- endif -%}
 {%- assign custom_alt = e | loc: "poster_alt", page.lang -%}
 {%- capture poster_alt -%}{%- if custom_alt -%}{{ custom_alt }}{%- else -%}{{ t.poster_for }} {{ e.title }}{%- endif -%}{%- endcapture -%}
@@ -29,10 +31,10 @@ layout: page
           <p>{{ e | loc: "summary", page.lang }}</p>
           {%- endif %}
         </div>
-        {%- if show_tickets or e.facebook or e.albums or e.playlists %}
+        {%- if show_tickets or e.facebook or albums or e.playlists %}
         <div class="actions">
           {% if show_tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e | loc: "tickets_label", page.lang | default: t.get_tickets }}</a>{% endif %}
-          {%- for album in e.albums %}
+          {%- for album in albums %}
           <a class="btn btn-cream" href="{{ album.url }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-photo"/></svg>{{ album | loc: "title", page.lang | default: t.photo_album }}</a>
           {%- endfor %}
           {%- for list in e.playlists %}
