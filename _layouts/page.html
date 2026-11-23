@@ -8,6 +8,21 @@
 <meta property="og:title" content="{{ page.og_title | default: 'Singing in Seattle Choir' | escape }}">
 <meta property="og:description" content="{{ page.og_description | default: 'Spreading the joy of music to all who listen. Nonprofit community choir in Bellevue & the Eastside.' | escape }}">
 <meta property="og:image" content="{{ page.og_image | default: page.poster | default: 'assets/choir.webp' | prepend: '/' | relative_url }}">
+<script>
+  // Theme: follow the system unless the visitor picked one with the toggle.
+  (function () {
+    var root = document.documentElement, t = null;
+    try { t = localStorage.getItem("theme"); } catch (e) {}
+    if (t === "light" || t === "dark") root.dataset.theme = t;
+    window.toggleTheme = function () {
+      var light = root.dataset.theme ? root.dataset.theme === "light"
+        : matchMedia("(prefers-color-scheme: light)").matches;
+      var next = light ? "dark" : "light";
+      root.dataset.theme = next;
+      try { localStorage.setItem("theme", next); } catch (e) {}
+    };
+  })();
+</script>
 <link rel="icon" href="{{ '/assets/logo.svg' | relative_url }}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

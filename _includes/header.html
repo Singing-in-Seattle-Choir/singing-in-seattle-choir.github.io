@@ -1,7 +1,7 @@
 {%- assign donate = "https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir" -%}
 <header>
     <div class="brand">
-      <a href="{{ '/' | relative_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}><img src="{{ '/assets/logo.svg' | relative_url }}" alt="Singing in Seattle Choir — home"></a>
+      <a href="{{ '/' | relative_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}><img class="logo-dark" src="{{ '/assets/logo.svg' | relative_url }}" alt="Singing in Seattle Choir — home"><img class="logo-light" src="{{ '/assets/logo-light.svg' | relative_url }}" alt="Singing in Seattle Choir — home"></a>
       <span class="eyebrow">Nonprofit community choir · Bellevue &amp; the Eastside</span>
     </div>
 
@@ -9,11 +9,13 @@
       <a href="{{ '/' | relative_url }}"{% if include.current == "home" %} aria-current="page"{% endif %}>Home</a>
       <a href="{{ '/about.html' | relative_url }}"{% if include.current == "about" %} aria-current="page"{% endif %}>About Us</a>
       <a href="{{ '/events.html' | relative_url }}"{% if include.current == "events" %} aria-current="page"{% endif %}>Events</a>
+      {% include theme-toggle.html %}
       <a class="btn btn-gold" href="{{ donate }}" target="_blank" rel="noopener">Donate</a>
     </nav>
 
     <div class="mobile-actions">
       <a class="btn btn-gold" style="font-size: 15px; padding: 12px 16px" href="{{ donate }}" target="_blank" rel="noopener">Donate</a>
+      {% include theme-toggle.html %}
       <details class="menu">
         <summary aria-label="Menu"><svg class="i" style="width: 22px; height: 22px"><use href="#i-menu"/></svg></summary>
         <nav class="panel" aria-label="Main">
