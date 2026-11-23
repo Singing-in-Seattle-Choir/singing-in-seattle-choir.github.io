@@ -27,11 +27,14 @@ layout: page
           <p>{{ e.summary }}</p>
           {%- endif %}
         </div>
-        {%- if show_tickets or e.facebook or e.albums %}
+        {%- if show_tickets or e.facebook or e.albums or e.playlists %}
         <div class="actions">
           {% if show_tickets %}<a class="btn btn-cream" href="{{ e.tickets }}" target="_blank" rel="noopener">{{ e.tickets_label | default: "Get tickets" }}</a>{% endif %}
           {%- for album in e.albums %}
           <a class="btn btn-cream" href="{{ album.url }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-photo"/></svg>{{ album.title | default: "Photo album" }}</a>
+          {%- endfor %}
+          {%- for list in e.playlists %}
+          <a class="btn btn-cream" href="https://www.youtube.com/playlist?list={{ list }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-yt"/></svg>Videos on YouTube</a>
           {%- endfor %}
           {% if e.facebook %}<a class="link fb" href="{{ e.facebook }}" target="_blank" rel="noopener"><svg class="i"><use href="#i-fb"/></svg>Event on Facebook</a>{% endif %}
         </div>
@@ -39,10 +42,13 @@ layout: page
       </div>
     </article>
 
-    {%- if e.youtube %}
+    {%- if e.youtube or e.playlists %}
     <section class="section" aria-labelledby="video">
       <h2 class="big" id="video">Video</h2>
       <div class="videos">
+        {%- for list in e.playlists %}
+        <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list={{ list }}" title="{{ e.title | escape }} — video playlist" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        {%- endfor %}
         {%- for id in e.youtube %}
         <iframe src="https://www.youtube-nocookie.com/embed/{{ id }}" title="{{ e.title | escape }} — video {{ forloop.index }}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         {%- endfor %}

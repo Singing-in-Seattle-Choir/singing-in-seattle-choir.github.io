@@ -10,4 +10,5 @@ albums:
   - url: https://photos.app.goo.gl/g5y5K2Np72sxr8iG8
   - url: https://photos.app.goo.gl/6yF7vQEtKKXYPYbL9
     title: More photos by Armen
+playlists: [PLF7UeV6WMLNE]
 ---

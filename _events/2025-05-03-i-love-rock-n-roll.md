@@ -8,4 +8,5 @@ summary: A rock ’n’ roll night together with the local band Tomorrow Never C
 tickets: https://www.zeffy.com/en-US/ticketing/f7598195-9dbf-438f-98de-6bcef1d26235
 albums:
   - url: https://photos.app.goo.gl/12C1GnbJWPurU7Kx6
+playlists: [PLWSovTLcN2wBFYFs2-vpq0qMVKwa0nSb-]
 ---

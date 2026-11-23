@@ -31,7 +31,8 @@ facebook: https://www.facebook.com/events/...   # optional
 # poster_alt: ...               # default "Poster for <title>"
 # map: https://maps.app.goo.gl/...   # default: Google Maps search for venue
 # photo: assets/events/...webp  # thumbnail in "Past events"; default: poster
-# youtube: [VIDEO_ID, ...]      # embedded on the event page
+# playlists: [PLAYLIST_ID, ...] # YouTube playlists: embedded + a button
+# youtube: [VIDEO_ID, ...]      # single YouTube videos, embedded
 # photos: [assets/events/....webp, ...]   # gallery on the event page
 # albums:                       # links to shared photo albums
 #   - url: https://photos.app.goo.gl/...

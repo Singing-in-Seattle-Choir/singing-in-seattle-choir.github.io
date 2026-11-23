@@ -293,6 +293,7 @@ a.title:hover { color: var(--gold-hi); }
 .event-page .actions a.link { font-size: 15px; font-weight: 600; padding: 10px 0; display: inline-flex; align-items: center; gap: 6px; }
 .videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .videos iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 10px; }
+.videos iframe:only-child { grid-column: 1 / -1; max-width: 900px; }
 .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
 
