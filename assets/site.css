@@ -45,13 +45,12 @@ header { position: relative; display: flex; align-items: center; justify-content
 .brand img { width: 217px; height: 110px; object-fit: contain; }
 .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); }
 nav.main { display: flex; align-items: center; gap: 40px; font-size: 17px; font-weight: 500; }
-nav.main a { color: var(--text); text-decoration: none; padding: 10px 0 6px; border-bottom: 2px solid transparent; }
+nav.main a { color: var(--text); text-decoration: none; white-space: nowrap; padding: 10px 0 6px; border-bottom: 2px solid transparent; }
 nav.main a[aria-current="page"] { color: var(--gold); border-bottom-color: var(--gold); }
 .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 16px; padding: 13px 26px; border-radius: 999px; text-align: center; }
 .btn-gold { background: var(--fill); color: var(--on-fill) !important; }
 .btn-gold:hover { background: var(--fill-hi); }
 .btn-cream { background: var(--paper); color: var(--on-paper) !important; }
-nav.main .btn { margin-left: 8px; border: 0; padding: 13px 26px; }
 
 /* mobile menu (no JavaScript) */
 .mobile-actions { display: none; align-items: center; gap: 8px; }
@@ -124,7 +123,6 @@ svg.i { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentCo
   .brand img { width: 140px; height: 71px; }
   header .eyebrow { font-size: 9.5px; letter-spacing: .1em; line-height: 1.6; white-space: nowrap; }
   .mobile-actions { position: absolute; top: 12px; right: 0; }
-  .mobile-actions .btn { font-size: 14px !important; padding: 11px 15px !important; }
   .menu .panel { top: 50px; }
   .staff { top: 112px; left: 0; width: 100%; height: 26px; background-size: 520px 67px; background-position: -30px -36px; }
   .hero { margin-top: 34px; }
@@ -366,8 +364,6 @@ nav.main .switches { margin-left: -16px; }
 .switches .lang-switch:hover { border-color: var(--gold); color: var(--gold); }
 /* On phones the language link lives in the menu, to keep the header short. */
 .mobile-actions .lang-switch { display: none; }
-/* "Поддержать" is longer than "Donate"; keep it clear of the logo on phones. */
-:root:lang(ru) .mobile-actions .btn { padding: 11px 12px !important; font-size: 13px !important; }
 .menu .panel a.lang { color: var(--gold); font-weight: 500; font-size: 16px; }
 
 /* Russian pages: DM Serif Display has no Cyrillic, so headings use Playfair Display. */

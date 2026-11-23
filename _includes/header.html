@@ -1,5 +1,4 @@
 {%- include lang.html -%}
-{%- assign donate = "https://www.zeffy.com/en-US/donation-form/donate-to-support-singing-in-seattle-choir" -%}
 {%- assign home_url = lp | append: '/' | relative_url -%}
 {%- assign about_url = lp | append: '/about.html' | relative_url -%}
 {%- assign events_url = lp | append: '/events.html' | relative_url -%}
@@ -14,11 +13,9 @@
       <a href="{{ about_url }}"{% if include.current == "about" %} aria-current="page"{% endif %}>{{ t.about }}</a>
       <a href="{{ events_url }}"{% if include.current == "events" %} aria-current="page"{% endif %}>{{ t.events }}</a>
       {% include header-switches.html %}
-      <a class="btn btn-gold" href="{{ donate }}" target="_blank" rel="noopener">{{ t.donate }}</a>
     </nav>
 
     <div class="mobile-actions">
-      <a class="btn btn-gold" style="font-size: 15px; padding: 12px 16px" href="{{ donate }}" target="_blank" rel="noopener">{{ t.donate }}</a>
       {% include header-switches.html %}
       <details class="menu">
         <summary aria-label="{{ t.menu }}"><svg class="i" style="width: 22px; height: 22px"><use href="#i-menu"/></svg></summary>
