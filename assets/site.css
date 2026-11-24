@@ -31,7 +31,11 @@ html, body { margin: 0; }
 body {
   background: var(--bg) url("stars.svg") repeat;
   color: var(--text); font-family: Inter, system-ui, sans-serif; line-height: 1.5;
+  /* A soft halo in the background colour hides the stars behind text. */
+  text-shadow: 0 0 2px var(--bg), 0 0 4px var(--bg), 0 0 8px var(--bg);
 }
+/* No halo on anything with its own solid background. */
+.btn, .menu .panel, .event, .date, .box, .card, .rehearse, .subtabs a, .tile, .step .n { text-shadow: none; }
 a { color: var(--gold); }
 a:hover { color: var(--gold-hi); }
 img { display: block; max-width: 100%; }
