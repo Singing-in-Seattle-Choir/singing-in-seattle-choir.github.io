@@ -12,7 +12,7 @@
 <meta name="description" content="{{ page.description | default: page.summary | escape }}">
 <meta property="og:title" content="{{ page.og_title | default: 'Singing in Seattle Choir' | escape }}">
 <meta property="og:description" content="{{ page.og_description | default: t.og_description | escape }}">
-<meta property="og:image" content="{{ page.og_image | default: page.poster | default: 'assets/choir.webp' | prepend: '/' | relative_url }}">
+<meta property="og:image" content="{{ page.og_image | default: page.poster | default: 'assets/og-logo.png' | prepend: '/' | absolute_url }}">
 {%- if alt_url %}
 <link rel="alternate" hreflang="{{ page.lang }}" href="{{ page.url | absolute_url }}">
 <link rel="alternate" hreflang="{{ alt_lang }}" href="{{ alt_url | absolute_url }}">
