@@ -34,7 +34,7 @@ end
 
 module ChoirI18n
   RU_MONTHS = %w[января февраля марта апреля мая июня июля августа сентября октября ноября декабря].freeze
-  RU_MONTHS_SHORT = %w[янв фев мар апр мая июн июл авг сен окт ноя дек].freeze
+  RU_MONTHS_SHORT = %w[янв фев мар апр мая июня июля авг сен окт ноя дек].freeze
   RU_DAYS = %w[воскресенье понедельник вторник среда четверг пятница суббота].freeze
 
   # {{ event | loc: "summary", page.lang }} gives summary_ru on Russian pages
