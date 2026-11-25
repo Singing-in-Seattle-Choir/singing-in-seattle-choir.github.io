@@ -5,7 +5,7 @@ footer: compact
 nav: home
 description: "Singing in Seattle — некоммерческий хор в Белвью и Истсайде. Поём музыку разных народов более чем на пяти языках. Мы рады всем."
 ---
-    <section class="hero">
+    <div class="home">
       <div class="photo">
         <img src="{{ '/assets/choir.webp' | relative_url }}" alt="Участники хора Singing in Seattle в концертных костюмах" width="2341" height="1728">
         <div class="text">
@@ -14,17 +14,14 @@ description: "Singing in Seattle — некоммерческий хор в Бе
         </div>
       </div>
 
-{% include home-event.html %}
-    </section>
-
     <section class="boxes">
-      <div class="box" id="rehearsals">
+      <div class="box rehearsals" id="rehearsals">
         <span class="label">Репетиции</span>
         <span class="title">По понедельникам, 19:00 – 21:00</span>
         <a class="addr" href="https://maps.app.goo.gl/xgzWdnQ2xDiFsBnS6" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>1934 108th Ave NE, Bellevue, WA 98004</a>
         <span class="note">Репетируем каждую неделю, новым певцам всегда рады.</span>
       </div>
-      <div class="box">
+      <div class="box follow">
         <span class="label">Мы в соцсетях</span>
         <span class="title">Послушайте, как мы поём</span>
         <div class="social">
@@ -33,7 +30,7 @@ description: "Singing in Seattle — некоммерческий хор в Бе
           <a href="https://www.instagram.com/singinginseattle/" target="_blank" rel="noopener"><svg class="i"><use href="#i-ig"/></svg>Instagram</a>
         </div>
       </div>
-      <div class="box">
+      <div class="box donate">
         <span class="label">Поддержка</span>
         <span class="title">Помогите музыке звучать</span>
         <div class="support">
@@ -42,3 +39,5 @@ description: "Singing in Seattle — некоммерческий хор в Бе
         </div>
       </div>
     </section>
+{% include home-event.html %}
+    </div>

@@ -5,7 +5,7 @@ footer: compact
 nav: home
 description: "Singing in Seattle Choir is a nonprofit community choir in Bellevue and the Eastside, sharing international music in more than five languages. Everyone is welcome."
 ---
-    <section class="hero">
+    <div class="home">
       <div class="photo">
         <img src="{{ '/assets/choir.webp' | relative_url }}" alt="Singing in Seattle Choir members in concert dress" width="2341" height="1728">
         <div class="text">
@@ -14,17 +14,14 @@ description: "Singing in Seattle Choir is a nonprofit community choir in Bellevu
         </div>
       </div>
 
-{% include home-event.html %}
-    </section>
-
     <section class="boxes">
-      <div class="box" id="rehearsals">
+      <div class="box rehearsals" id="rehearsals">
         <span class="label">Rehearsals</span>
         <span class="title">Mondays, 7 – 9 pm</span>
         <a class="addr" href="https://maps.app.goo.gl/xgzWdnQ2xDiFsBnS6" target="_blank" rel="noopener"><svg class="i"><use href="#i-pin"/></svg>1934 108th Ave NE, Bellevue, WA 98004</a>
         <span class="note">We rehearse weekly, and new singers are always welcome.</span>
       </div>
-      <div class="box">
+      <div class="box follow">
         <span class="label">Follow us</span>
         <span class="title">Hear us sing</span>
         <div class="social">
@@ -33,7 +30,7 @@ description: "Singing in Seattle Choir is a nonprofit community choir in Bellevu
           <a href="https://www.instagram.com/singinginseattle/" target="_blank" rel="noopener"><svg class="i"><use href="#i-ig"/></svg>Instagram</a>
         </div>
       </div>
-      <div class="box">
+      <div class="box donate">
         <span class="label">Support</span>
         <span class="title">Keep the music going</span>
         <div class="support">
@@ -42,3 +39,5 @@ description: "Singing in Seattle Choir is a nonprofit community choir in Bellevu
         </div>
       </div>
     </section>
+{% include home-event.html %}
+    </div>
